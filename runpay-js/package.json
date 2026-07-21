@@ -1,0 +1,23 @@
+{
+  "name": "runpay",
+  "version": "1.0.0",
+  "description": "The API marketplace for AI agents — 205 services, pay-per-call via Stripe",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  },
+  "keywords": ["ai", "agents", "api", "marketplace", "stripe", "llm", "mcp", "openai", "claude", "langchain"],
+  "author": "Allen Koubeli <hello@getrunpay.com>",
+  "license": "MIT",
+  "homepage": "https://getrunpay.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PalabreX/runpay-js"
+  },
+  "bugs": { "url": "https://github.com/PalabreX/runpay-js/issues" },
+  "engines": { "node": ">=18" },
+  "dependencies": {}
+}
