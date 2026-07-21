@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "runpay"
+version = "1.0.0"
+description = "The API marketplace for AI agents — 205 services, pay-per-call via Stripe"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Allen Koubeli", email = "hello@getrunpay.com"}]
+keywords = ["ai", "agents", "api", "marketplace", "stripe", "llm", "mcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://getrunpay.com"
+Documentation = "https://getrunpay.com/docs"
+Repository = "https://github.com/PalabreX/runpay-python"
