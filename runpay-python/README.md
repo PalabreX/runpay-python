@@ -57,6 +57,35 @@ result = runpay.call("halludetect", {"response": "text"})  # no configure() need
 | `runpay.services(category=None)` | List all 205 services |
 | `runpay.wallet()` | Check balance |
 
+## LangChain & CrewAI tools
+
+Turn all 205 services into ready-to-use agent framework tools — no manual tool definitions needed, generated automatically from the live catalog.
+
+```bash
+pip install runpay[langchain]   # or runpay[crewai], or runpay[all]
+```
+
+```python
+from runpay.langchain import get_tools
+
+tools = get_tools(agent_id="agt_your_id")                     # all 205 services
+tools = get_tools(agent_id="agt_your_id", category="Security") # just one category
+
+from langchain.agents import initialize_agent
+agent = initialize_agent(tools, llm, agent="zero-shot-react-description")
+```
+
+```python
+from runpay.crewai import get_tools
+
+tools = get_tools(agent_id="agt_your_id")
+
+from crewai import Agent
+researcher = Agent(role="Researcher", goal="...", tools=tools)
+```
+
+Each tool's arguments come from the service's published input schema. Services that haven't published one yet still work — they fall back to a single generic `payload` argument.
+
 ## Links
 
 - **Get a free agent ID**: [getrunpay.com/playground](https://getrunpay.com/playground)
