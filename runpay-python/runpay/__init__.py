@@ -93,7 +93,8 @@ def services(category: str = None) -> list:
     url = f"{_API_BASE}/api/services/catalog"
     req = urllib.request.Request(url, headers={"User-Agent": "runpay-python/1.0.0"})
     with urllib.request.urlopen(req, timeout=10) as response:
-        svcs = json.loads(response.read())
+        data = json.loads(response.read())
+    svcs = data.get("services", data) if isinstance(data, dict) else data
     if category:
         svcs = [s for s in svcs if s.get("category", "").lower() == category.lower()]
     return svcs
