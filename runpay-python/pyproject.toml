@@ -20,6 +20,11 @@ classifiers = [
 requires-python = ">=3.8"
 dependencies = []
 
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.1.0", "pydantic>=2.0"]
+crewai = ["crewai>=0.30.0", "pydantic>=2.0"]
+all = ["langchain-core>=0.1.0", "crewai>=0.30.0", "pydantic>=2.0"]
+
 [project.urls]
 Homepage = "https://getrunpay.com"
 Documentation = "https://getrunpay.com/docs"
